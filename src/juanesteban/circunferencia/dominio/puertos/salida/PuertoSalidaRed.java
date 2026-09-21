@@ -12,5 +12,5 @@ import juanesteban.circunferencia.dominio.modelos.RespuestaCliente;
  */
 public interface PuertoSalidaRed {
     
-    void enviarRepuesta(RespuestaCliente respuesta);
+    void enviarRespuesta(RespuestaCliente respuesta);
 }
