@@ -8,6 +8,6 @@ package juanesteban.circunferencia.aplicacion.dto;
  *
  * @author apari
  */
-public class CalcularCircunferenciaCommand {
+public record CalcularCircunferenciaCommand(double radio) {
     
 }
