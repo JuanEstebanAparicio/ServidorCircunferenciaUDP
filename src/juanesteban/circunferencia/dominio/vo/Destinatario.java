@@ -4,10 +4,29 @@
  */
 package juanesteban.circunferencia.dominio.vo;
 
+import java.util.Objects;
+import juanesteban.circunferencia.dominio.excepciones.DestinatarioIncorrectoException;
+import juanesteban.circunferencia.dominio.excepciones.PuertoIncorrectoException;
 /**
  *
  * @author apari
  */
-public class Destinatario {
+
+public record Destinatario(String ip, int puerto) {
     
+    public Destinatario {
+        if(Objects.isNull(ip) || ip.isBlank()) {
+            throw new DestinatarioIncorrectoException(
+            "La direccion IP del destinatario no puede ser nula ni vacia.");       
+        }
+        if(puerto <= 0 || puerto > 65535) {
+            throw new PuertoIncorrectoException(
+            "EL puerto del destinatario debe ser un numero entre 1 y 65535");
+        }
+        ip = ip.trim();
+    }
+    
+    public String endpoint() {
+        return ip + ":" + puerto;
+    }
 }
