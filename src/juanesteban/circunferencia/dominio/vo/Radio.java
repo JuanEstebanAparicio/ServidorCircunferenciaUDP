@@ -13,5 +13,11 @@ import juanesteban.circunferencia.dominio.excepciones.RadioIncorrectoException;
 public record Radio(double valor){
 
     private static final String MENSAJE_ERROR = "Radio Incorrecto: debe ser mayor a 0";
+
+    public Radio {
+        if (!Double.isFinite(valor) || valor <= 0){
+            throw new RadioIncorrectoException(MENSAJE_ERROR);
+        }
+    }
 }
 

@@ -4,10 +4,16 @@
  */
 package juanesteban.circunferencia.dominio.excepciones;
 
+import java.io.Serial;
 /**
  *
  * @author apari
  */
-public class PuertoIncorrectoException {
+public class PuertoIncorrectoException extends DominioException {
+    @Serial
+    private static final long serialVersionUID = 1L;
     
+    public PuertoIncorrectoException (final String mensaje) {
+        super(mensaje);
+  }
 }
