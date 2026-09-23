@@ -26,7 +26,11 @@ public final class Calculo {
         this.radio = radio;
     }
     
-            @return
+      /**
+     * Calcula la longitud de la circunferencia a partir del radio.
+     *
+     * @return Objeto Resultado con la longitud y el mensaje de éxito.
+     */
        public Resultado calcular() {
            final double longitud = 2 * Math.PI * radio.valor();
            return new Resultado(longitud, MENSAJE_OK);
